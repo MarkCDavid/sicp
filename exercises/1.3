@@ -1,0 +1,10 @@
+(define (square x) (* x x))
+
+(define (sum-squares x y) (+ (square x) (square y)))
+
+(define (procedure x y z)
+	(cond 
+		((and (> x z) (> y z)) (sum-squares x y))
+		((and (> x y) (> z y)) (sum-squares x z))
+		(else (sum-squares z y))
+	))

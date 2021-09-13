@@ -1,0 +1,20 @@
+(define (p) (p))
+
+(define (test x y)
+	(if (= x 0) 0 y))
+
+
+Running (test 0 (p))
+
+- in applicative-order evaluation:
+
+(if (= 0 0) 0 (p))
+	as (p) becomes (p), we enter an endless loop
+	that will always evaluate to (if (= 0 0) 0 (p))
+
+- in normal-order evaluation:
+(if (= 0 0) 0 (p))
+	because we evaluate the `if` special form before
+	evaluating (p), we immediately get the answer of
+	0, in the left branch
+0

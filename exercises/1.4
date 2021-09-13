@@ -1,0 +1,10 @@
+(define (a-plus-abs-b a b)
+	((if (> b 0) + -) a b))
+
+Examining possible cases:
+	(> b 0) => #t
+		here we would have a statement (+ a b),
+		because (if #t + -) evaluates to +
+	(> b 0) => #f
+		here we would have a statement (- a b),
+		vecause (if #f + -) evaluates to -
