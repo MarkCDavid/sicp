@@ -1,0 +1,3 @@
+`if` is a special form because it switches to normal order evaluation, instead of using aplicative order evaluation. 
+
+As such, using of `new-if` procedure results in an infinite recursion, as all 'cases' of `new-if` procedure has to be evaluated first, before the choice is done.
